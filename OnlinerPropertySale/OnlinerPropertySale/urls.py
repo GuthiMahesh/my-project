@@ -17,8 +17,20 @@ from django.contrib import admin
 from django.urls import path
 from django.views.generic import TemplateView
 
+from app1 import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('openadmin/', admin.site.urls),
+    path('homepage/',views.Homepage),
     path('',TemplateView.as_view(template_name="index.html")),
-    path('about/',TemplateView.as_view(template_name="about.html"))
+    path('about/',TemplateView.as_view(template_name="about.html")),
+    path('sales/',TemplateView.as_view(template_name="sales.html")),
+    path('contact/',TemplateView.as_view(template_name="contact.html")),
+    path('registration/',views.Registration),
+    path('userdetails/',views.userdetails),
+    path('login/',views.login),
+    path('loginvalidate/',views.loginvalidate),
+
+
 ]

@@ -43,6 +43,7 @@
 					<div class="col-lg-6 text-lg-right header-top-right">
 						<div class="top-social">
 							<a href="https://en-gb.facebook.com/login/"><i class="fa fa-facebook"></i></a>
+							<a href="https://in.linkedin.com/"><i class="fa fa-linkedin"></i></a>
 						</div>
 						<div class="user-panel">
 							<a href="/registration/"><i class="fa fa-user-circle-o"></i> Register</a>
@@ -52,9 +53,16 @@
 				</div>
 			</div>
 		</div>
-						<ul class="main-menu">}
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="site-navbar">
+						<div class="nav-switch">
+							<i class="fa fa-bars"></i>
+						</div>
+						<ul class="main-menu">
 							<li><a href="/homepage/">Home</a></li>
-							<li><a href="/admin/">ABOUTUS</a></li>
+							<li><a href="/about/">ABOUT US</a></li>
 							<li><a href="/openadmin/">ADMIN</a></li>
 							<li><a href="/sales/">SALES</a></li>
 							<li><a href="/contact/">Contact</a></li>
@@ -69,43 +77,8 @@
 
 	<!-- Page top section -->
 	<section class="page-top-section set-bg" data-setbg="{% static 'img/page-top-bg.jpg'%}">
-		<div class="container text-white">
-			<h2>About us</h2>
-		</div>
 	</section>
 	<!--  Page top end -->
-
-	<!-- Breadcrumb -->
-	<div class="site-breadcrumb">
-		<div class="container">
-			<a href=""><i class="fa fa-home"></i>Home</a>
-			<span><i class="fa fa-angle-right"></i>About us</span>
-		</div>
-	</div>
-
-	<!-- page -->
-	<section class="page-section">
-		<div class="container">
-			<img class="mb-5" src="{% static 'img/about.jpg'%}" alt="">
-			<div class="row about-text">
-				<div class="col-xl-6 about-text-left">
-					<h5>ABOUT US</h5>
-					<p>Lorem ipsum dolor sitdoni amet, consectetur donald adipis elite for. Vivamus interdum ultrices augue. Aenean dos cursus lania. Duis et fringilla leonardo. Mauris mattis sem, debut curus risus viverra sed. Vestibul vitae velit felis. Nulla placerat orci ante casat. Pellentesque ac placerat . Cras urna duis, ornare cursus purus.</p>
-					<p>Ut vel auctor ligula. Aenean nec dui pretium, commodo ligula sit amet, faucibus purus. Mauris at dolor imperdiet, aliquet nisi non, vulputate est. Maecenas feugiat sagittis lacus. Mauris dinissim consequat tellus id congue. Mauris bendum mollis viverra. Vestibulum in leo placerat sollicitudin varius.</p>
-				</div>
-				<div class="col-xl-6 about-text-right">
-					<h5>OUR QUALITY</h5>
-					<p>Donec enim ipsum porta justo integer at velna vitae auctor integer congue magna at risus auctor purus unt pretium ligula rutrum integer sapien ultrice ligula luctus undo magna risus</p>
-					<ul class="about-list">
-						<li><i class="fa fa-check-circle-o"></i>Lorem ipsum dolor sitdoni amet, consectetur dont adipis elite vivamus interdum.</li>
-						<li><i class="fa fa-check-circle-o"></i>Integer pulvinar ante nulla, ac fermentum ex congue id vestibulum ensectetur. </li>
-						<li><i class="fa fa-check-circle-o"></i>Proin blandit nibh in quam semper iaculis lorem ipsum dolor salama ender.</li>
-						<li><i class="fa fa-check-circle-o"></i>Mauris at dolor imperdiet, aliquet nisi non, vulputate est sit amet.</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-
 
 	<!-- Footer section -->
 	<footer class="footer-section set-bg"  data-setbg="{% static 'img/footer-bg.jpg'%}">
@@ -117,7 +90,7 @@
 				<div class="col-lg-3 col-md-6 footer-widget">
 					<div class="contact-widget">
 						<h5 class="fw-title">CONTACT US</h5>
-						<p><i class="fa fa-map-marker"></i>1-77/1/A/1</p>
+						<p><i class="fa fa-map-marker"></i>1-77/1/A/1, Hyderabad,Telangana</p>
 						<p><i class="fa fa-phone"></i>(+91) 9666454558</p>
 						<p><i class="fa fa-envelope"></i>info.maheshguthi@gmail.com</p>
 						<p><i class="fa fa-clock-o"></i>Mon - Sat, 08 AM - 06 PM</p>
@@ -129,16 +102,16 @@
 						<ul>
 							<li><a href="">Hyderabad</a></li>
 							<li><a href="">Ranga Reddy</a></li>
-							<li><a href="">Washington</a></li>
-							<li><a href="">Los Angeles</a></li>
-							<li><a href="">Chicago</a></li>
+							<li><a href="">Warangal</a></li>
+							<li><a href="">Karimnagar</a></li>
+							<li><a href="">Adilabad</a></li>
 						</ul>
 						<ul>
-							<li><a href="">St Louis</a></li>
-							<li><a href="">Jacksonville</a></li>
-							<li><a href="">San Jose</a></li>
-							<li><a href="">San Diego</a></li>
-							<li><a href="">Houston</a></li>
+							<li><a href="">Amaravathi</a></li>
+							<li><a href="">Guntur</a></li>
+							<li><a href="">Vijayawada</a></li>
+							<li><a href="">Kurnool</a></li>
+							<li><a href="">Tirupati</a></li>
 						</ul>
 					</div>
 				</div>
@@ -153,15 +126,19 @@
 					</div>
 				</div>
 			</div>
-        </div>
-
-
+                                        
 	<!--====== Javascripts & Jquery ======-->
 	<script src="{% static 'js/jquery-3.2.1.min.js'%}"></script>
 	<script src="{% static 'js/bootstrap.min.js'%}"></script>
 	<script src="{% static 'js/owl.carousel.min.js'%}"></script>
 	<script src="{% static 'js/masonry.pkgd.min.js'%}"></script>
 	<script src="{% static 'js/magnific-popup.min.js'%}"></script>
+	<script src="{% static 'js/main.js'%}"></script>
+
+	<!-- load for map -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0YyDTa0qqOjIerob2VTIwo_XVMhrruxo"></script>
+	<script src="js/map.js"></script>
+
+
 </body>
-<script src="{% static 'js/main.js'%}"></script>
 </html>
