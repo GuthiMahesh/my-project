@@ -21,7 +21,7 @@ from app1 import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('openadmin/', admin.site.urls),
+    path('openadmin/',admin.site.urls),
     path('homepage/',views.Homepage),
     path('',TemplateView.as_view(template_name="index.html")),
     path('about/',TemplateView.as_view(template_name="about.html")),
@@ -31,6 +31,12 @@ urlpatterns = [
     path('userdetails/',views.userdetails),
     path('login/',views.login),
     path('loginvalidate/',views.loginvalidate),
-
-
+    path('register1/',views.userdetails),
+    path('register/',views.registeruser),
+    path('welcomeuser/',views.welcomeuser),
+    path('viewprofile/',views.viewprofile),
+    path('AddProperties/',views.AddProperties),
+    path('add_property_user/',views.add_property_user),
+    path('update/',views.update),
+    path('perssion/',views.perssion),
 ]

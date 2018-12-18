@@ -35,14 +35,24 @@ class SalesRegistration(models.Model):
 class UserRegistration(models.Model):
     name = models.CharField(max_length=50)
     contact_no = models.IntegerField()
-    email_id = models.EmailField(max_length=100)
+    email_id = models.EmailField(max_length=100,primary_key=True)
     password = models.CharField(max_length=50)
 
 
-class Transaction(models.Model):
-    Order_id = models.IntegerField()
-    customer_id = models.IntegerField(primary_key=True)
-    customer_name = models.CharField(max_length=50)
+class Property(models.Model):
+    name = models.CharField(max_length=500)
+    state = models.CharField(max_length=100)
+    city = models.CharField(max_length=100)
+    image=models.ImageField()
+    contact_number = models.IntegerField()
+    Email = models.EmailField(max_length=500, default=None)
+    price = models.DecimalField(max_digits=10, decimal_places=2, default=None)
+
+
+# class Transaction(models.Model):
+#     Order_id = models.IntegerField()
+#     customer_id = models.IntegerField(primary_key=True)
+#     customer_name = models.CharField(max_length=50)
 
 
 class Suggestions(models.Model):

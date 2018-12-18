@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/welcomeuser/" method="post">
+    {% csrf_token %}
+<table align="center">
+            <tr>
+                <th colspan="5" width="500" height="80" bgcolor="#8a2be2">
+                    <font color="white" face="Arial" size="5">
+                        Welcome
+                    </font>
+                </th>
+            </tr>
+            <tr>
+                <th colspan="5" width="500" height="30" bgcolor="#a52a2a">
+                    <font color="white" face="Arial" size="3">
+                        {{ emp.name }}
+                    </font>
+                </th>
+            </tr>
+
+               <tr bgcolor="#7fff00">
+                    <td align="center">
+                        <a href="/homepage/">HOME</a></td>
+
+                <td align="center">
+                    <a href="/viewprofile/?uname={{ emp.email_id }}">
+                        View Profile
+                    </a>
+                </td>
+                <td align="center">
+                    <a href="/update/?email={{ emp.email_id }}">
+                        Update Profile
+                    </a>
+                </td>
+                <td align="center">
+                    <a href="/AddProperties/?email={{emp.email_id  }}">Add Properties</a>
+                </td>
+
+                <td align="center">
+                    <a href="/login/">
+                        Logout
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </table>
+    <table align="center">
+    <tr>
+        <td>
+    {% if type == 'profile' %}
+        {{ emp.name }}<br>
+        {{ emp.contact_no }}<br>
+        {{ emp.email_id}}<br>
+    {% endif %}
+     </td>
+  </tr>
+</table>
+</form>
+<table>
+{% if type == 'mahesh' %}
+    <form action="/perssion/" method="post">
+    {% csrf_token %}
+  <table align="center">
+  <tr><td>{{ msge }}</td></tr>
+  <tr><td><input type="text" placeholder="name" name="name" value="{{ res.name }}"></td></tr>
+  <tr><td><input type="number" placeholder="age" name="age" value="{{ res.age}}"></td></tr>
+  <tr><td><input type="number" placeholder="contact" name="contact" value="{{ res.contact_no }}"></td></tr>
+  <tr><td><input type="email" placeholder="email" name="email" value="{{ res.email_id }}"></td></tr>
+  <tr><td><input type="text" placeholder="password" name="password" value="{{ res.password }}"></td></tr>
+  <tr><td><input type="submit" value="update"></td></tr>
+  </table>
+    </form>
+{% endif %}
+    {% if type == 'add_property' %}
+    <form action="/add_property_user/" method="post">
+    {% csrf_token %}
+  <table align="center">
+  <tr><td>{{ msge }}</td></tr>
+  <tr>
+      <td><font size="4" color="#808080"><label> Name: <input type="text"  placeholder="name" name="name"></label></font>
+    </td>
+  </tr>
+<tr>
+    <td>
+        <font size="4" color="#808080"><label> Contact: <input type="number"  placeholder="contact" name="contact"></label></font>
+    </td>
+</tr>
+      <tr>
+            <td>
+                <font size="4" color="#808080"><label>Upload image: <input type="file"  placeholder="image" name="image"></label></font>
+            </td>
+    </tr>
+      <tr>
+            <td>
+                <font size="4" color="#808080"><label> Email: <input type="email"  placeholder="email" name="email"></label></font>
+            </td>
+    </tr>
+  <tr>
+      <td><font size="4" color="#808080"><label> State: <input type="text"  placeholder="State" name="state"></label></font>
+</td>
+  </tr>
+      <tr>
+          <td>
+              <font size="4" color="#808080"><label> City: <input type="text"  placeholder="City" name="city"></label></font>
+          </td>
+      </tr>
+      <tr>
+            <td>
+                <font size="4" color="#808080"><label>Price: <input type="number"  placeholder="price" name="price"></label></font>
+            </td>
+    </tr>
+      <tr><td><input type="submit" value="Add Property"></td></tr>
+  </table>
+    </form>
+{% endif %}
+{{ msg }}
+</table>
+</body>
+</html>

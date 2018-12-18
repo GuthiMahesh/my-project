@@ -24,7 +24,6 @@
 	<div id="preloder">
 		<div class="loader"></div>
 	</div>
-
 	<!-- Header section -->
 	<header class="header-section">
 		<div class="header-top">
@@ -53,80 +52,6 @@
 				</div>
 			</div>
 		</div>
-        <! registration code starting>
-                {% if register %}
-            <form action="/userdetails/" method="post">
-    {% csrf_token %}
-
-<table align="center" border="3" bgcolor="#006400">
-    <tr>
-        <th> Register Page</th>
-    </tr>
-    <tr>
-        <td>
-            <input type="text" placeholder="Name" name="t1" required>
-        </td>
-    </tr>
-            <tr>
-                <td>
-                    <input type="number" placeholder="Contact" name="t2" required>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="email" placeholder="email" name="t3" required>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="password" placeholder="password" name="t4" required>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="submit" value="submit">
-                </td>
-            </tr>
-    <tr>
-        <td>
-             {{ msg }}
-        </td>
-    </tr>
-
-</table>
-    </form>
-        {% endif %}
-    <! registration code ending>
-
-    <! login code starting>
-    {% if login %}
-<form action="/login/" method="post">
-    {% csrf_token %}
-<table align="center" border="3" bgcolor="#8b008b">
-    <tr>
-        <th>Login page</th>
-    </tr>
-    <tr>
-        <td>
-            <input type="text" placeholder="username" name="m1" required>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <input type="text" placeholder="password" name="m2" required>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <input type="submit" value="login">
-        </td>
-    </tr>
-</table>
-</form>
-
-    {% endif %}
-    <! login code ending>
-
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
@@ -152,11 +77,88 @@
 
 	<!-- Hero section -->
 	<section class="hero-section set-bg" data-setbg="{% static 'img/bg.jpg'%}">
-		<div class="container hero-text text-white">
+		<div class="container hero-text text-white" style="float: left">
 			<h2>find your place with our local life style</h2>
 			<p>Search real estate property records, houses,land and more<br>Find property info from the most comprehensive source data.</p>
-			<a href="#" class="site-btn">VIEW DETAIL</a>
 		</div>
+            <div style="float: right;margin-top: -250px">
+        {% if type == 'login' %}
+    <form action="/welcomeuser/" method="post">
+    {% csrf_token %}
+<table align="center" border="3" bgcolor="#8b008b">
+    <tr>
+        <th>Login page</th>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" placeholder="username" name="m1" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" placeholder="password" name="m2" required>
+        </td>
+    </tr>
+    <tr>
+        <td align="center">
+            <input type="submit" value="login">
+        </td>
+    </tr>
+    <table align="center">
+    <tr>
+        <td bgcolor="white">
+            <a href="/register1/"> Create New Account</a>
+        </td>
+    </table>
+    </tr>
+</table>
+{{ message }}
+</form>
+
+{% endif %}
+   {% if type == 'register' %}
+<form action='/register/' method="post">
+    {% csrf_token %}
+<table align="center" border="3" bgcolor="#ee82ee">
+    <tr>
+        <th> Register Page</th>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" placeholder="Name" name="t1" required>
+        </td>
+    </tr>
+            <tr>
+                <td>
+                    <input type="number" placeholder="Contact" name="t2" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="email" placeholder="email" name="t3" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="password" placeholder="password" name="t4" required>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <input type="submit" value="submit">
+                </td>
+            </tr>
+    <tr>
+        <td>
+             {{ msg }}
+        </td>
+    </tr>
+
+</table>
+    </form>
+
+            {% endif %}
+    </div>
 	</section>
 	<!-- Hero section end -->
 
@@ -165,12 +167,18 @@
 	<div class="filter-search">
 		<div class="container">
 			<form class="filter-form">
-				<input type="text" placeholder="Enter a street name, address number or keyword">
+				<input type="text" placeholder="Enter a street name,address">
 				<select>
 					<option value="City">City</option>
+					<option value="City">Hyderabad</option>
+					<option value="City">Warangal</option>
+					<option value="City">Rangareddy</option>
+					<option value="City">KarimNagar</option>
 				</select>
 				<select>
 					<option value="City">State</option>
+					<option value="City">Telangana</option>
+					<option value="City">Andhra Pradesh</option>
 				</select>
 				<button class="site-btn fs-submit">SEARCH</button>
 			</form>
@@ -182,8 +190,7 @@
 	<footer class="footer-section set-bg"  data-setbg="{% static 'img/footer-bg.jpg'%}">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-3 col-md-6 footer-widget">
-                    MAHESH
+				<div class="col-lg-3 col-md-6 footer-widget
 				</div>
 				<div class="col-lg-3 col-md-6 footer-widget">
 					<div class="contact-widget">
@@ -225,7 +232,7 @@
 				</div>
 			</div>
         </div>
-
+</footer>
 	<!-- Footer section end -->
 
 	<!--====== Javascripts & Jquery ======-->
